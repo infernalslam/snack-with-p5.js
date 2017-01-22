@@ -30,6 +30,7 @@ function itemLocation () {
 
   item = createVector(floor(random(cols)), floor(random(rows)))
   item.mult(scl)
+  // console.log('item  ', item)
 }
 
 
@@ -61,6 +62,7 @@ function snackClass () {
 
   this.tail = []
   this.total = 0
+  this.pass = true
 
   this.dir = function (x, y) {
     // console.log(x, y)
@@ -68,14 +70,14 @@ function snackClass () {
     this.Yspeed = y
   }
   this.update = function () {
+    // console.log(this.tail.length)
     if (this.total === this.tail.length) {
       for (var i = 0; i < this.tail.length - 1; i++) {
-        this.tail = this.tail[i + 1]
+        this.tail[i] = this.tail[i + 1]
       }
     }
     this.tail[this.total - 1] = createVector(this.x, this.y)
     console.log(this.tail)
-
 
     this.x = this.x + this.Xspeed * scl
     this.y = this.y + this.Yspeed * scl
