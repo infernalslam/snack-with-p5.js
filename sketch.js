@@ -19,7 +19,10 @@ function draw () {
     itemLocation()
   }
   /////////////////////
-  fill(255, 0, 100)
+  var R = Math.floor(Math.random() * 200) + 55
+  var G = Math.floor(Math.random() * 200) + 55
+  var B = Math.floor(Math.random() * 200) + 55
+  fill(R, G, B)
   rect(item.x, item.y , scl, scl)
 }
 
@@ -90,6 +93,7 @@ function snackClass () {
     for (var i = 0; i < this.tail.length; i++) {
       rect(this.tail[i].x, this.tail[i].y, scl, scl)
     }
+    fill(255, 0, 100)
     rect(this.x, this.y, scl, scl)
   }
 
